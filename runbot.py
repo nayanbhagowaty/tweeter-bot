@@ -65,6 +65,10 @@ def postTweet(tweet):
 #    postTweet(tweet)
 #  time.sleep(6)#0*60)
 #  pass
+print(${{consumer_key}})
 url,filename = PickAFFile()
 content = GetFileContent(url,filename)
 tweet = GetTweet(content,filename)
+print(tweet)
+if not len(tweet)<20:
+  postTweet(tweet)
