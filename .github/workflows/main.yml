@@ -26,8 +26,10 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
       - name: install python package 
-        run: |
-          pip install tweepy
+        uses: BSFishy/pip-action@v1
+        with:
+          packages: |
+            tweepy
       - name: execute py script 
         run: |
           python runbot.py
