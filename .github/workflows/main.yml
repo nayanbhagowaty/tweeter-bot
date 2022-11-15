@@ -34,4 +34,5 @@ jobs:
         run: |
           python runbot.py
         env:
-          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+          consumer_key: ${{ secrets.CONSUMER_KEY }} # if run.py requires passwords..etc, set it as secrets
+          access_token: ${{ secrets.ACCESS_TOKEN }}
