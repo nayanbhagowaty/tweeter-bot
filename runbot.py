@@ -8,16 +8,16 @@ def PickAFFile():
   randNum = random.randrange(0,3)
   #print('fileno: ' + str(randNum))
   if randNum == 0:
-    url = 'https://raw.githubusercontent.com/nayan112/books/main/hamlet.txt'
+    url = 'https://raw.githubusercontent.com/nayan112/books/main/Hamlet'
     fileName='Hamlet'
   elif randNum == 1:
-    url = 'https://raw.githubusercontent.com/nayan112/books/main/JoyceKilmer.txt'
+    url = 'https://raw.githubusercontent.com/nayan112/books/main/JoyceKilmer'
     fileName='JoyceKilmer'
   elif randNum == 2:
       url = 'https://raw.githubusercontent.com/nayan112/books/main/RudyardKipling'
       fileName='RudyardKipling'
   elif randNum == 3:
-      url = 'https://raw.githubusercontent.com/nayan112/books/main/omar_khayyam_rubaiyat'
+      url = 'https://raw.githubusercontent.com/nayan112/books/main/OmarKhayyam'
       fileName='OmarKhayyam'
 
   return url, fileName
@@ -49,8 +49,8 @@ def GetTweet(storyText,filename):
 
 def postTweet(tweet):
   # Authenticate to Twitter
-  auth = tweepy.OAuthHandler("") #("CONSUMER_KEY", "CONSUMER_SECRET")
-  auth.set_access_token("")   #ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
+  auth = tweepy.OAuthHandler(os.environ['consumer_key']) #("CONSUMER_KEY", "CONSUMER_SECRET")
+  auth.set_access_token(os.environ['access_token'])   #ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
   # Create API object
   api = tweepy.API(auth)
   # Create a tweet
@@ -65,7 +65,7 @@ def postTweet(tweet):
 #    postTweet(tweet)
 #  time.sleep(6)#0*60)
 #  pass
-print(os.environ['consumer_key'])
+
 url,filename = PickAFFile()
 content = GetFileContent(url,filename)
 tweet = GetTweet(content,filename)
