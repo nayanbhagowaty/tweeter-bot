@@ -65,7 +65,7 @@ def postTweet(tweet):
 #    postTweet(tweet)
 #  time.sleep(6)#0*60)
 #  pass
-print($consumer_key)
+print(os.environ['consumer_key'])
 url,filename = PickAFFile()
 content = GetFileContent(url,filename)
 tweet = GetTweet(content,filename)
