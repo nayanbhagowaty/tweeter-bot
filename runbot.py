@@ -49,8 +49,8 @@ def GetTweet(storyText,filename):
 
 def postTweet(tweet):
   # Authenticate to Twitter
-  auth = tweepy.OAuthHandler(os.environ['consumer_key']) #("CONSUMER_KEY", "CONSUMER_SECRET")
-  auth.set_access_token(os.environ['access_token'])   #ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
+  auth = tweepy.OAuthHandler(os.environ['consumer_key'],os.environ['consumer_secret']) #("CONSUMER_KEY", "CONSUMER_SECRET")
+  auth.set_access_token(os.environ['access_token'],os.environ['access_token_secret'])   #ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
   # Create API object
   api = tweepy.API(auth)
   # Create a tweet
