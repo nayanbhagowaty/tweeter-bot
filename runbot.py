@@ -69,6 +69,5 @@ def postTweet(tweet):
 url,filename = PickAFFile()
 content = GetFileContent(url,filename)
 tweet = GetTweet(content,filename)
-print(tweet)
 if not len(tweet)<20:
   postTweet(tweet)
