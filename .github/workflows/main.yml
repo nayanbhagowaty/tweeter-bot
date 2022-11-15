@@ -36,3 +36,5 @@ jobs:
         env:
           consumer_key: ${{ secrets.CONSUMER_KEY }} # if run.py requires passwords..etc, set it as secrets
           access_token: ${{ secrets.ACCESS_TOKEN }}
+          consumer_secret: ${{ secrets.CONSUMER_SECRET }} # if run.py requires passwords..etc, set it as secrets
+          access_token_secret: ${{ secrets.ACCESS_TOKEN_SECRET }}
