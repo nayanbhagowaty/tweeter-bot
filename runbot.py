@@ -5,18 +5,24 @@ import random
 import os
 
 def PickAFFile():
-  randNum = random.randrange(0,3)
+  randNum = random.randrange(0,5)
   #print('fileno: ' + str(randNum))
   if randNum == 0:
+    url = 'https://raw.githubusercontent.com/nayan112/books/main/Shakespeare'
+    fileName='Shakespeare'
+  if randNum == 1:
+    url = 'https://raw.githubusercontent.com/nayan112/books/main/Shakespeare2'
+    fileName='Shakespeare'
+  if randNum == 2:
     url = 'https://raw.githubusercontent.com/nayan112/books/main/Hamlet'
     fileName='Hamlet'
-  elif randNum == 1:
+  elif randNum == 3:
     url = 'https://raw.githubusercontent.com/nayan112/books/main/JoyceKilmer'
     fileName='JoyceKilmer'
-  elif randNum == 2:
+  elif randNum == 4:
       url = 'https://raw.githubusercontent.com/nayan112/books/main/RudyardKipling'
       fileName='RudyardKipling'
-  elif randNum == 3:
+  elif randNum == 5:
       url = 'https://raw.githubusercontent.com/nayan112/books/main/OmarKhayyam'
       fileName='OmarKhayyam'
 
@@ -41,7 +47,7 @@ def GetTweet(storyText,filename):
   i = 0
   while rerun:
     lineIndex = random.randrange(10, len(spltLines)-20)
-    if len(spltLines[lineIndex + i]) < 10:
+    if len(spltLines[lineIndex + i]) < 30 :
       i = i+1
     else:
       rerun = False
