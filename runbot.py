@@ -5,7 +5,7 @@ import random
 import os
 
 def PickAFFile():
-  randNum = random.randrange(0,5)
+  randNum = random.randrange(0,6)
   #print('fileno: ' + str(randNum))
   if randNum == 0:
     url = 'https://raw.githubusercontent.com/nayan112/books/main/Shakespeare'
@@ -25,6 +25,10 @@ def PickAFFile():
   elif randNum == 5:
       url = 'https://raw.githubusercontent.com/nayan112/books/main/OmarKhayyam'
       fileName='OmarKhayyam'
+  elif randNum == 6:
+      url = 'https://raw.githubusercontent.com/nayan112/books/main/JohannWolfgangGoethe'
+      fileName='JohannWolfgangGoethe'
+      
 
   return url, fileName
 
